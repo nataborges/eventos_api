@@ -16,8 +16,9 @@ import lombok.Setter;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
 
-    private Integer id;
+    private Integer id_endereco;
 
     private String logradouro;
 
@@ -36,7 +37,8 @@ public class Endereco {
     private String pais;
 
     private String complemento;
-
+@ManyToOne
+@JoinColumn(name="id_tipo")
     private Tipo tipo;
 
 
